@@ -1,161 +1,82 @@
 {
-  "name": "rubick2",
-  "version": "0.0.12",
+  "name": "rubick",
+  "version": "4.3.2",
   "author": "muwoo <2424880409@qq.com>",
-  "description": "An electron-vue project",
-  "license": null,
-  "main": "./dist/electron/main.js",
+  "private": true,
   "scripts": {
-    "version": "standard-version",
-    "release": "node .electron-vue/build.js && electron-builder --publish always",
-    "build": "node .electron-vue/build.js && electron-builder",
-    "dev": "node .electron-vue/dev-runner.js",
-    "rebuild": " ./node_modules/.bin/electron-rebuild",
-    "rebuild_win": "npm rebuild --runtime=electron --target=11.4.10 --disturl=https://atom.io/download/atom-shell --abi=85",
-    "rebuild_linux": "npm rebuild --runtime=electron --target=11.4.10 --disturl=https://atom.io/download/atom-shell --abi=85"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "feature:dev": "cd feature & npm run serve",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "release": "vue-cli-service electron:build",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps"
   },
-  "build": {
-    "asar": true,
-    "productName": "rubick2",
-    "appId": "com.muwoo.rubick",
-    "compression": "maximum",
-    "directories": {
-      "output": "build"
-    },
-    "files": [
-      "dist/electron/**/*"
-    ],
-    "dmg": {
-      "contents": [
-        {
-          "x": 410,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
-        },
-        {
-          "x": 130,
-          "y": 150,
-          "type": "file"
-        }
-      ]
-    },
-    "mac": {
-      "icon": "build/icons/icon.icns",
-      "target": "pkg",
-      "extendInfo": {
-        "LSUIElement": 1
-      }
-    },
-    "win": {
-      "icon": "build/icons/icon.ico",
-      "target": "nsis"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
-    },
-    "linux": {
-      "icon": "build/icons/",
-      "publish": [
-        "github"
-      ]
-    }
+  "main": "index.js",
+  "optionalDependencies": {
+    "electron-clipboard-ex": "^1.3.3"
   },
   "dependencies": {
-    "ant-design-vue": "^1.7.5",
-    "axios": "^0.18.1",
-    "bplist-parser": "^0.3.0",
-    "download": "^8.0.0",
-    "download-git-repo": "^3.0.2",
-    "electron-is-dev": "^2.0.0",
-    "electron-store": "^8.0.0",
+    "@better-scroll/core": "^2.4.2",
+    "@electron/remote": "^2.0.10",
+    "ant-design-vue": "3.2.14",
+    "axios": "^1.3.4",
+    "core-js": "^3.6.5",
+    "cross-spawn": "^7.0.3",
+    "electron-updater": "^4.6.5",
     "extract-file-icon": "^0.3.2",
-    "iohook": "^0.9.3",
-    "is-chinese": "^1.4.2",
-    "jian-pinyin": "^0.2.3",
-    "keycode": "^2.2.0",
-    "marked": "^2.0.7",
-    "md5": "^2.3.0",
-    "mime-types": "^2.1.31",
-    "node-fetch": "^2.6.1",
-    "puppeteer-core": "^10.0.0",
-    "puppeteer-in-electron": "^3.0.3",
-    "query-string": "^7.0.0",
-    "request": "^2.88.2",
-    "request-promise": "^4.2.6",
-    "robotjs": "git+https://github.com/Toinane/robotjs.git",
-    "semver": "^7.3.5",
-    "shelljs": "^0.8.4",
-    "sudo-prompt": "^9.2.1",
-    "systeminformation": "^5.8.0",
-    "unzip": "^0.1.11",
-    "uuid": "^8.3.2",
-    "vue": "^2.5.16",
-    "vue-electron": "^1.0.6",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
-    "vuex-electron": "^1.0.0"
+    "fix-path": "^3.0.0",
+    "get-mac-apps": "^1.0.2",
+    "got": "^11.8.3",
+    "lodash.debounce": "^4.0.8",
+    "memorystream": "^0.3.1",
+    "node-key-sender": "^1.0.11",
+    "npm": "6.14.7",
+    "pinyin-match": "^1.2.4",
+    "pouchdb": "^7.2.2",
+    "pouchdb-load": "^1.4.6",
+    "pouchdb-replication-stream": "^1.2.9",
+    "simple-plist": "0.2.1",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0",
+    "webdav": "4.11.3",
+    "worker-loader": "^3.0.8"
   },
   "devDependencies": {
-    "ajv": "^6.5.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-minify-webpack-plugin": "^0.3.1",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "babel-runtime": "^6.26.0",
-    "cfonts": "^2.1.2",
-    "chalk": "^2.4.1",
-    "copy-webpack-plugin": "^4.5.1",
-    "cross-env": "^5.1.6",
-    "css-loader": "^0.28.11",
-    "del": "^3.0.0",
-    "devtron": "^1.4.0",
-    "electron": "^11.4.10",
-    "electron-builder": "22.10.5",
-    "electron-debug": "^1.5.0",
-    "electron-devtools-installer": "^2.2.4",
-    "electron-rebuild": "^2.3.5",
-    "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.2.0",
-    "iconv-lite": "^0.6.3",
-    "less": "^2.7.3",
+    "@electron/asar": "^3.2.8",
+    "@ts-type/package-dts": "^1.0.53",
+    "@types/electron-devtools-installer": "^2.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "babel-plugin-import": "^1.13.3",
+    "compressing": "^1.10.0",
+    "electron": "26.0.0",
+    "electron-builder": "22.13.1",
+    "electron-devtools-installer": "^3.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.0.0",
+    "less": "^3.0.4",
     "less-loader": "^5.0.0",
-    "listr": "^0.14.3",
-    "mini-css-extract-plugin": "0.4.0",
-    "multispinner": "^0.2.1",
-    "node-abi": "^2.30.0",
-    "node-loader": "^0.6.0",
-    "react": "^17.0.2",
-    "standard-version": "^9.3.1",
-    "style-loader": "^0.21.0",
-    "url-loader": "^1.0.1",
-    "vue-html-loader": "^1.2.4",
-    "vue-loader": "^15.2.4",
-    "vue-style-loader": "^4.1.0",
-    "vue-template-compiler": "^2.5.16",
-    "webpack": "^4.15.1",
-    "webpack-cli": "^3.0.8",
-    "webpack-dev-server": "^3.1.4",
-    "webpack-hot-middleware": "^2.22.2",
-    "webpack-merge": "^4.1.3"
+    "prettier": "^2.8.4",
+    "typescript": "~4.1.5",
+    "vue-cli-plugin-electron-builder": "3.0.0-alpha.4",
+    "worker-plugin": "^5.0.1"
   },
-  "iohook": {
-    "targets": [
-      "node-83",
-      "electron-85"
-    ],
-    "platforms": [
-      "darwin",
-      "win32",
-      "linux"
-    ],
-    "arches": [
-      "x64",
-      "ia32"
-    ]
+  "resolutions": {
+    "vue-cli-plugin-electron-builder/electron-builder": "^23.0.3",
+    "leveldown": "6.0.3"
   }
 }

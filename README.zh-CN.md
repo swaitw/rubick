@@ -1,111 +1,117 @@
-[English](https://github.com/clouDr-f2e/rubick/blob/master/README.md) | 简体中文
+[English](./README.md) | 简体中文
 
 
 <div align= "center">
-<img align="center" width=200 src="https://user-images.githubusercontent.com/21073039/128333805-73e086f0-5523-46a3-a096-cba80b904c46.png" />
+<img align="center" width=200 src="./public/logo.png" />
 </div>
-
 
 <div align= "center">
  <h1>Rubick</h1>
 
- <img alt="release" src="https://img.shields.io/github/downloads/clouDr-f2e/rubick/total" />
- <a href="https://github.com/clouDr-f2e/rubick/releases">
-    <img alt="release" src="https://img.shields.io/github/package-json/v/clouDr-f2e/rubick" />
+ <img alt="release" src="https://img.shields.io/github/downloads/rubickCenter/rubick/total" />
+ <a href="https://github.com/rubickCenter/rubick/releases">
+    <img alt="release" src="https://img.shields.io/github/package-json/v/rubickCenter/rubick" />
  </a>
- <a href="https://github.com/clouDr-f2e/rubick/actions">
-   <img alt=building src=https://img.shields.io/github/workflow/status/clouDr-f2e/rubick/Build>
+ <a href="https://github.com/rubickCenter/rubick/actions">
+   <img alt=building src=https://img.shields.io/github/actions/workflow/status/rubickCenter/rubick/main.yml>
  </a>
- <a href="https://github.com/clouDr-f2e/rubick/blob/master/LICENSE">
-    <img alt="npm" src="https://img.shields.io/github/license/clouDr-f2e/rubick" />
+ <a href="https://github.com/rubickCenter/rubick/blob/master/LICENSE">
+    <img alt="npm" src="https://img.shields.io/github/license/rubickCenter/rubick" />
  </a>
- <a href="https://github.com/clouDr-f2e/rubick/stargazers">
-    <img alt="star" src="https://img.shields.io/github/stars/clouDr-f2e/rubick?style=social">
+ <a href="https://github.com/rubickCenter/rubick/stargazers">
+    <img alt="star" src="https://img.shields.io/github/stars/rubickCenter/rubick?style=social">
 </a>
 <a href="https://gitee.com/monkeyWang/rubick">
     <img alt="码云" src="https://img.shields.io/badge/Gitee--yellow.svg?style=social&logo=data:image/svg+xml;base64,PHN2ZyB0PSIxNTc0ODM3MTM4ODM3IiBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHAtaWQ9IjE3NzAiICAgICB3aWR0aD0iMTYiIGhlaWdodD0iMTYiPiAgICA8cGF0aCBkPSJNODkxIDQyOC44SDQ2NS44Yy0yMC40IDAtMzcgMTYuNS0zNyAzN3Y5Mi40YzAgMjAuNCAxNi41IDM3IDM3IDM3aDI1OC45YzIwLjQgMCAzNyAxNi42IDM3IDM3djE4LjRjMCA2MS4zLTQ5LjcgMTEwLjktMTEwLjkgMTEwLjlIMjk5LjRjLTIwLjQgMC0zNy0xNi42LTM3LTM3VjM3My4yYzAtNjEuMyA0OS43LTExMC45IDExMC45LTExMC45aDUxNy42YzIwLjQgMCAzNy0xNi41IDM3LTM3bDAuMS05Mi4zYzAtMjAuNC0xNi41LTM3LTM3LTM3SDM3My4zQzIyMC4yIDk2IDk2IDIyMC4yIDk2IDM3My4zVjg5MWMwIDIwLjQgMTYuNiAzNyAzNyAzN2g1NDUuNEM4MTYuMiA5MjggOTI4IDgxNi4zIDkyOCA2NzguNFY0NjUuOGMwLTIwLjQtMTYuNi0zNy0zNy0zN3oiICAgICAgICAgIGZpbGw9IiNkODFlMDYiIHAtaWQ9IjE3NzEiPjwvcGF0aD48L3N2Zz4="/>
 </a>
 </div>
 
+<div align= "center">
+<img align="center" src="https://picx.zhimg.com/80/v2-f8fe09ef125dac5fdcbef3fe00f92b21_720w.png" />
+</div>
 
-基于 electron 的开源工具箱，自由集成丰富插件，打造极致的桌面端效能工具。Rubick(拉比克) 是 dota 里面的英雄之一，其核心技能是插件化使用其他英雄的技能，用完即走。非常符合本工具的设计理念，所以取名 Rubick。
+开源的插件化桌面端效率工具箱。插件是基于 npm 进行安装和卸载，非常轻便。插件数据支持 webdav 多端同步，非常安全。支持内网部署，可二次定制化开发，非常灵活。
 
-## 安装包
-* [Rubick Mac OS](https://github.com/clouDr-f2e/rubick/releases)
-* [Rubick Windows](https://github.com/clouDr-f2e/rubick/releases)
-* [Rubick Linux](https://github.com/clouDr-f2e/rubick/releases)
+## 获取 rubick
+下载最新的安装包：
 
-## 支持能力
-- [x] 支持远程下载安装插件，支持插件开发者模式
-- [x] 支持插件分离
-- [x] 支持系统命令取色、截屏、帮助
-- [x] 支持超级面板，长按右击呼出
-- [x] 支持全局快捷键设置
-- [x] 支持搜索本地已安装 app 或 偏好设置
-- [x] macos touchBar 唤起插件
-- [x] 支持 Windows
-- [x] 支持 Linux
-
-
-
-![example.gif](https://user-images.githubusercontent.com/21073039/128359309-2377d3cf-7b70-4e8f-9973-ae8f337a8006.gif)
+* [Rubick Mac OS](https://github.com/rubickCenter/rubick/releases)
+* [Rubick Windows](https://github.com/rubickCenter/rubick/releases)
+* [Rubick Linux](https://github.com/rubickCenter/rubick/releases)
 
 ## 使用文档
 
-[Rubick Docs](https://cloudr-f2e.github.io/rubick/)
+[Rubick 官网](https://rubick.vip)
+
+[Rubick Docs](https://rubickCenter.github.io/rubick/)
+
+## 如何使用 rubick
+
+安装完成 rubick 后，可以通过快捷键 Alt/Option+R  可以快速呼起主程序。主程序输入框内输入关键词可以搜索出对应的 App、插件、文件... 选择即可使用。如果没有想要的功能，可以点击左侧的 logo 进入插件市场寻找自己想要的插件进行安装。
+
+## 支持能力
+- [x] 基于 npm 包模式的插件管理，安装插件和安装 npm 包一样简单
+- [x] 支持 webdav 多端数据同步，真正的数据安全同步
+- [x] 独一无二的系统插件模式，让插件成为 rubick 的一部分
+- [x] 支持快速启动本地 app、文件、文件夹
+- [x] 支持企业化内网部署
+- [x] 支持多语言
 
 
-## 使用问题
-依赖于 `robotjs` dev 环境运行请在 `install` 后执行 `npm run rebuild`
+## 核心功能展示
+### 1. 搜索系统应用
+支持拼音和缩写来搜索系统安装应用：
 
-## 目前支持能力
+![](https://pic1.zhimg.com/80/v2-70c105ff7fb1e955fc67ffa5a5564092_720w.gif)
 
-### touchBar 唤起插件
-macOS 支持 touchbar 快速唤起插件
+### 2. UI类插件安装
+点击搜索框右侧 `rubick` 图标，进入插件市场，选择所需插件，点击下载按钮即可下载，下载完成后在已安装 tab 下可以找到安装插件。
+安装完成后，输入插件呼起命令即可使用对应插件：
 
-![2oyn8-wu97m (3)](https://user-images.githubusercontent.com/21073039/129894362-1dbb8436-921c-4138-be9c-072dc2e62549.gif)
+![](https://pic1.zhimg.com/80/v2-5906bba20fe0a67f9e7a5a8c11341305_720w.gif)
 
+### 3. 系统类插件安装
+系统插件安装方式和UI类一样，在插件市场选择`系统分类`，寻找适合自己的系统插件安装即可。
 
-### 超级面板
-长按鼠标右键，即可呼起超级面板，可以根据当前鼠标选择内容，匹配对应插件能力。比如当前选择图片后长按右击，则会呼起上传图床插件：
+```
+系统插件安装成功后，需要重启 rubick 才能生效
+```
 
-![image.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1706cc730f1f46078cb700a445211317~tplv-k3u1fbpfcp-watermark.image)
+### 4. 基于 webdav 的多端数据同步
+在 `rubick` 内搜索`偏好设置` 进入 `账户和设置` -> `多端数据同步`；即可对 `rubick` 插件使用数据进行 `导出` 和 `导入`。
 
-### 模板
-模板即是一个内置 UI 样式的功能插件。
+![](https://pic1.zhimg.com/80/v2-ff85793741e4dff82a729d3eb3d41551_720w.png)
 
-<img src=https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0b113ad547974699b9c73c28bc09b9b1~tplv-k3u1fbpfcp-watermark.image width=500 />
+## 关联仓库
 
-### 系统命令
-#### 取色
-基于 `robot.js` 以及 `iohook` 实现。未使用 C++ 扩展。
+[Rubick 插件仓库](https://gitee.com/rubick-center)
 
-![image](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3036ae85bf3549fc8bbbe2926ecbad55~tplv-k3u1fbpfcp-watermark.image)
+[Rubick 插件数据库](https://gitcode.net/rubickcenter/rubick-database)
 
-#### 截屏
+[Rubick Plugin CLI](https://github.com/rubickCenter/rubick-plugin-cli)
 
-<img src=https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/18023dab52e1420c9e87362cefddb2a1~tplv-k3u1fbpfcp-watermark.image width=500 />
+## 赞助
+### 1. 加入知识星球
+我们在知识星球积累了大量的关于 rubick 的知识和常见问题，您可以付费加入我们的知识星球来一起讨论。我们将随时解答！
 
+<img width=400 src=https://picx.zhimg.com/80/v2-6deabf65175d18080439ef813102d18c_720w.png />
 
-#### 全局快捷键
+### 2. 打赏喝杯咖啡
+如果项目对你有帮助，可以请我喝杯咖啡赞赏！
 
-<img src=https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/62cc424eacac4c9eb178f0e055e87d9a~tplv-k3u1fbpfcp-watermark.image width=500 />
-
-## 贡献
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)]. <a href="https://github.com/clouDr-f2e/rubick/graphs/contributors"><img src="https://opencollective.com/rubick/contributors.svg?width=890&button=false" /></a>
+<div align= "left">
+<img width="180" src="https://picx.zhimg.com/80/v2-911d249dc454f3460451a4e1ecceeb14_720w.png">
+<img width="180" src="https://picx.zhimg.com/80/v2-3160247d6099053405e6cd2cb6afb5e5_720w.png">
+</div>
 
 ## 反馈
 对本项目有兴趣或者想要交流学习的同学可以扫码加下面的微信，备注 rubick，帮助我们更好的成长：
 
 ![image](https://user-images.githubusercontent.com/21073039/127327603-9796f246-ee4b-4950-a69d-ce3205ec9569.png)
 
-扫码关注 Rubick 官微, 获取最新动态：
-
-![wechat](https://user-images.githubusercontent.com/53158137/135377195-7fc4bb2f-e456-4d95-b2ec-2585417e600b.jpg)
-
-## 更新日志
-[ChangeLog](https://github.com/clouDr-f2e/rubick/blob/master/CHANGELOG.md)
+## 贡献
+This project exists thanks to all the people who contribute. [[Contribute](https://github.com/rubickCenter/rubick/graphs/contributors)]. <a href="https://github.com/rubickCenter/rubick/graphs/contributors"><img src="https://opencollective.com/rubick/contributors.svg?width=890&button=false" /></a>
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/clouDr-f2e/rubick/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/rubickCenter/rubick/blob/master/LICENSE) file for details.
 

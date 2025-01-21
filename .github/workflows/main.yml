@@ -23,10 +23,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-2019]
+        os: [macos-latest, windows-2019, ubuntu-latest]
 
     # create steps
     steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
       # step1: check out repository
       - name: Check out git repository
         uses: actions/checkout@v2
@@ -35,35 +39,25 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 16.x
 
       - name: Install system deps
         if: matrix.os == 'ubuntu-latest'
         run: |
           sudo apt-get install libxtst-dev libpng++-dev
           sudo apt-get install --no-install-recommends -y icnsutils graphicsmagick xz-utils
+          sudo snap install snapcraft --classic
       # step3: yarn
-      - name: macos Yarn install
-        if: ${{runner.os == 'macOS'}}
+      - name: Yarn install
         run: |
           yarn
           yarn global add xvfb-maybe
-          npm run rebuild
-
-      - name: windows Yarn install
-        if: ${{runner.os == 'Windows'}}
+          yarn global add @vue/cli
+      - name: Build feature
         run: |
+          cd ./feature
           yarn
-          yarn global add xvfb-maybe
-          npm run rebuild_win
-
-      - name: linux Yarn install
-        if: ${{runner.os == 'Linux'}}
-        run: |
-          yarn
-          yarn global add xvfb-maybe
-          npm run rebuild_linux
-
+          npm run build
       - name: Build  & release app
         run: |
           npm run release
